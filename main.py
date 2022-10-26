@@ -20,17 +20,17 @@ plt.show()
 
 from pandas.plotting import scatter_matrix
 
-attributes = ['sex','age','weight','chest','neck','back','leg']
+attributes = ['age','weight','chest','chest_pre','neck_pre','back_pre','leg_pre']
 
 scatter_matrix(manhattan[attributes], figsize=(12, 8))
 plt.show()
 
 from sklearn.model_selection import train_test_split
 
-x = manhattan[['sex','age','weight','neck','back','leg']]
+x = manhattan[['age','weight','chest_pre','neck_pre','back_pre','leg_pre']]
 y = manhattan[['chest']]
 
-x_train, x_test, y_train, y_test = train_test_split(x,y, train_size = 0.7, test_size = 0.3)
+x_train, x_test, y_train, y_test = train_test_split(x,y, train_size = 0.8, test_size = 0.2)
 
 from sklearn.linear_model import LinearRegression
 
